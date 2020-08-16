@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<title>Day Dreamer</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+<link rel="stylesheet" href="{{url_for('static',filename='css/style_real.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='css/w3.css')}}">
+<script src="/js/p5.js"></script>
+
+
+
+<style>
+    body,
+    html {
+        height: 100%;
+        font-family: "Inconsolata", sans-serif;
+    }
+
+    .bgimg {
+        background-position: center;
+        background-size: cover;
+        background-image: url("/w3images/coffeehouse.jpg");
+        min-height: 75%;
+    }
+
+    .menu {
+        display: none;
+    }
+</style>
+
+<body>
+
+    <!-- Links (sit on top) -->
+    <div class="w3-top">
+        <div class="w3-row w3-padding w3-brown">
+            <div class="w3-col s3">
+                <a href="#" class="w3-button w3-block w3-brown"></a>
+            </div>
+            <div class="w3-col s3">
+                <a href="#about" class="w3-button w3-block w3-brown">HOME</a>
+            </div>
+            <div class="w3-col s3">
+                <a href="/messages" class="w3-button w3-block w3-brown">GENERATOR</a>
+            </div>
+            <div class="w3-col s3">
+                <a href="#where" class="w3-button w3-block w3-brown"></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header with image -->
+    <header class="bgimg w3-display-container w3-grayscale-min" id="home">
+        <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
+            <span class="w3-tag">Audio-to-Image Generator</span>
+        </div>
+        <!-- <div class="w3-display-middle w3-center">
+            <span class="w3-text-brown" style="font-size:90px"></span>
+        </div> -->
+
+        <div class="w3-display-bottomright w3-center w3-padding-large">
+            <span class="w3-text-white">TechX 2020</span>
+        </div>
+        <div class="w3-display-bottomright w3-center w3-padding-large">
+            <span class="w3-text-brown">TechX 2020</span>
+        </div>
+        <image class="central" src="{{ url_for('static',filename='images/child.jpg' )}}" alt="from audio to text"
+            align="center" height="800" width="1430">
+    </header>
+
+    <!-- Add a background color and large text to the whole page -->
+    <div class="w3-sand w3-grayscale-min w3-large">
+        <!-- About Container -->
+        <div class="w3-container" id="about">
+            <div class="w3-content" style="max-width:1200px">
+                <h5 class="w3-center w3-padding-64">
+                    <div class="w3-third w3-display-topleft w3-padding-32" style="margin-left:170px">
+                        <image style="width:120px;height:120px"
+                            src="{{ url_for('static',filename='images/logo.jpg' )}}">
+                    </div>
+                    <span class="w3-tag w3-wide">FIND YOUR CHILDHOOD MEMORIES</span>
+                </h5>
+                <div class="w3-panel w3-leftbar w3-light-grey">
+                    <p><i>Description of our mission (around 100 words)</i></p>
+                </div>
+                <div class="w3-container w3-brown">
+                    <h1>Our Methodologies</h1>
+                </div>
+
+                <div class="w3-row-padding w3-margin-top">
+                    <div class="w3-third">
+                        <div class="w3-card">
+                            <image src="{{ url_for('static',filename='images/step1.png' )}}" style="width:100%">
+                                <div class="w3-container">
+                                    <h5>Audio to Text</h5>
+                                </div>
+                        </div>
+                    </div>
+
+                    <div class="w3-third">
+                        <div class="w3-card">
+                            <img src="{{ url_for('static',filename='images/step2.jpg' )}}" style="width:100%">
+                            <div class="w3-container">
+                                <h5>NLP Text Analysis</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w3-third">
+                        <div class="w3-card">
+                            <img src="{{ url_for('static',filename='images/step3.jpg' )}}" style="width:100%">
+                            <div class="w3-container">
+                                <h5>Generate Pictures</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <p><strong>Group Members:</strong> Chloe Hao, David Ma, Ivan Liu, Jiatong Yu, Stella Ye, Sunny Zhang</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

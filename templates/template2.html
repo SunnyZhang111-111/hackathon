@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Generator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+    <!-- <lnk rel="stylesheet" hred="w3.css"> -->
+    <!-- <script src="/js/p5.js"></script> -->
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style_real.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/w3.css')}}">
+    <style>
+        body,
+        html {
+            height: 100%;
+            font-family: "Inconsolata", sans-serif;
+        }
+    </style>
+</head>
+<!-- Page Container -->
+<!-- <body background="images_real/background.jpg"
+    style=" background-repeat:no-repeat ;background-size:100% 100%; background-attachment: fixed;"> -->
+
+<body class="w3-sand">
+
+
+    <div class="w3-content w3-margin-top" style="max-width:1400px;">
+
+        <!-- The Grid -->
+        <div class="w3-row-padding">
+
+            <!-- Left Column -->
+            <div class="w3-third" style="height:100%">
+
+                <div class="w3-sand w3-text-grey w3-card-4" style="height:100%">
+                    <div class="w3-display-container">
+                        <image src="{{ url_for('static',filename='images/childhood_top.jpg' )}}"
+                            style="width:100%;height:430px" alt="Avatar">
+                            <div class=" w3-container w3-text-sand w3-brown ">
+                                <h2>Audio Input</h2>
+                            </div>
+                    </div>
+                    <div class="w3-container">
+
+                        <!-- 录制音频-可以上传服务器 -->
+                        <!-- <div id="controls" class="w3-container w3-padding-small">
+                        <fieldset class="w3-container w3-padding-16 w3-margin-top">
+                            <button id="recordButton">Record</button>
+                            <button id="pauseButton">Pause</button>
+                            <button id="stopButton">Stop</button>
+                        </fieldset>
+                        </div>
+                        </div>
+                        
+                        <div id="formats" class="w3-container">TechX 2020</div>
+                         <p><strong>Recordings:</strong></p> -->
+                        <!-- <p id="recordingsList"></p> -->
+                        <!-- inserting these scripts at the end to be able to use all the elements in the DOM -->
+                        <!-- <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+                                                <script src="js/app_modified.js"></script>  -->
+                        <!-- 录制音频-可以上传服务器-->
+
+
+
+                        <div id="controls">
+                            <fieldset class="w3-container w3-padding-16 w3-margin-top">
+                                <legend>RECORD AUDIO</legend>
+                                <button id="recordButton">Record</button>
+                                <button id="pauseButton" disabled>Pause</button>
+                                <button id="stopButton" disabled>Stop</button>
+                            </fieldset>
+                        </div>
+                        <div id="formats">Format: start recording to see sample rate</div>
+                        <p><strong>Recordings:</strong></p>
+                        <ol id="recordingsList"></ol>
+                        <!-- inserting these scripts at the end to be able to use all the elements in the DOM -->
+                        <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+                        <script type="text/javascript" src="{{ url_for('static',filename='js/modified.js' )}}"></script>
+
+
+
+                        <!-- 录制音频 -->
+
+                        <!-- <script type="text/javascript" src="js/recorder.js"> </script> -->
+
+
+                        <!-- <script>
+                        var onFail = function (e) {
+                            console.log('Rejected!', e);
+                        };
+
+                        var onSuccess = function (s) {
+                            var context = new AudioContext();
+                            var mediaStreamSource = context.createMediaStreamSource(s);
+                            recorder = new Recorder(mediaStreamSource);
+                            recorder.record();
+
+                            // audio loopback
+                            // mediaStreamSource.connect(context.destination);
+                        }
+
+                        window.URL = window.URL || window.webkitURL;
+                        navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
+
+                        var recorder;
+                        var audio = document.querySelector('audio');
+
+                        function startRecording() {
+                            if (navigator.getUserMedia) {
+                                navigator.getUserMedia({ audio: true }, onSuccess, onFail);
+                            } else {
+                                console.log('navigator.getUserMedia not present');
+                            }
+                        }
+
+                        function stopRecording() {
+                            recorder.stop();
+                            recorder.exportWAV(function (s) {
+                                // generated audio files
+                                audio.src = window.URL.createObjectURL(s);
+                            });
+                        }
+                    </script>
+                    <--向服务器发送请求数据 -->
+
+                        <div class="w3-container w3-margin-bottom w3-margin-top w3-padding-16 w3-brown">
+                            <form action="#" method="post">
+                                <button class="w3-button">Click to Generate Your Picture</button>
+
+                            </form>
+                        </div>
+                        <script type="text/javascript" src="{{ url_for('static',filename='js/modified.js' )}}"></script>
+                        <!-- 结束录制音频 -->
+
+
+
+                        <br>
+                    </div>
+                </div><br>
+
+                <!-- End Left Column -->
+            </div>
+
+            <!-- Right Column -->
+            <div class="w3-twothird">
+
+                <div class="w3-container w3-card w3-sand w3-margin-bottom">
+                    <h2 class="w3-text-sand w3-padding-16 w3-brown"><i
+                            class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Generated Memory~
+                    </h2>
+
+
+                    <div class="w3-display-container">
+                        <image src="{{ url_for('static',filename='images/background.jpg' )}}"
+                            style="width:100%;height:590px" alt="Avatar">
+
+                            <div class=" w3-container w3-text-black w3-border-brown">
+
+                            </div>
+
+                            <hr>
+                    </div>
+
+                </div>
+
+                <!-- <div class="w3-container w3-card w3-white">
+                <h2 class="w3-text-grey w3-padding-16"><i
+                        class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Education</h2>
+                <div class="w3-container">
+                    <h5 class="w3-opacity"><b>W3Schools.com</b></h5>
+                    <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Forever</h6>
+                    <p>Web Development! All I need to know in one place</p>
+                    <hr>
+                </div>
+                <div class="w3-container">
+                    <h5 class="w3-opacity"><b>London Business School</b></h5>
+                    <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2013 - 2015</h6>
+                    <p>Master Degree</p>
+                    <hr>
+                </div>
+                <div class="w3-container">
+                    <h5 class="w3-opacity"><b>School of Coding</b></h5>
+                    <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2010 - 2013</h6>
+                    <p>Bachelor Degree</p><br>
+                </div>
+            </div> -->
+
+                <!-- End Right Column -->
+            </div>
+
+            <!-- End Grid -->
+        </div>
+    </div>
+</body>
+
+</html>
